@@ -2,7 +2,9 @@ import React from "react";
 import { useHistory } from "react-router";
 import { goToLastPage } from "../../routes/coordinator";
 import Button from '@material-ui/core/Button';
-import { DetailContainer, Detailsection, Header, InfoStatus } from './styled';
+import { Detailsection, InfoStatus } from './styled';
+import {Header} from '../../components/Header/Header'
+import { DetailContainer } from "../../components/AppContainer/AppContainer";
 
 
 function DetailsPokemon() {

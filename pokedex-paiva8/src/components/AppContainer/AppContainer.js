@@ -8,7 +8,7 @@ export const AppContainer = styled.div`
     background-color: #0a141e;
     height: 100vh;
     color: white;
-    overflow: hidden;
+    overflow: auto;
 
     h1 {
         text-align: center;

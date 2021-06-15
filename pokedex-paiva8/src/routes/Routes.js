@@ -1,31 +1,33 @@
-import React from "react"
-import { BrowserRouter, Switch, Route } from "react-router-dom"
-import DetailsPokemon from '../pages/DetailsPokemon/DetailsPokemon'
-import Home from '../pages/Home/Home'
-import Pokedex from '../pages/Pokedex/Pokedex'
-import Error from '../pages/Error/Error'
+import React from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import DetailsPokemon from '../pages/DetailsPokemon/DetailsPokemon';
+import Home from '../pages/Home/Home';
+import Pokedex from '../pages/Pokedex/Pokedex';
+import Error from '../pages/Error/Error';
+import Global from '../styles/Global';
 
 
 const Router = () => {
-    return(
+    return (
         <BrowserRouter>
             <Switch>
                 <Route exact path="/">
-                    <Home/>
+                    <Home />
                 </Route>
 
                 <Route exact path="/details/:id">
-                    <DetailsPokemon/>
+                    <DetailsPokemon />
                 </Route>
 
                 <Route exact path="/pokedex">
-                    <Pokedex/>
-                </Route>       
-        
+                    <Pokedex />
+                </Route>
+
                 <Route>
-                    <Error/>
+                    <Error />
                 </Route>
             </Switch>
+            <Global />
         </BrowserRouter>
     )
 }

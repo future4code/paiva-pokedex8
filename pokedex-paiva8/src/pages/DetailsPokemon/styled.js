@@ -1,36 +1,11 @@
 import styled from "styled-components";
-import Background from '../../assets/background-detail.png';
+
 // import Background from '../../assets/main_bg.jpg'
 
 
-export const DetailContainer = styled.div`
-background-image: url(${Background});
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-color: #0a141e;
-    height: 100vh;
-    color: white;
-    overflow: hidden;
 
-    h1 {
-        text-align: center;
-    }
-`
 
-export const Header = styled.header`
-color: black;
-height: 17%;
-align-items: center;
-display: flex;
-justify-content: center;
-flex-direction: column;
-text-align: center;
-h1 {
-    font-size: 1.8vw;
-}
-font-size: 1rem;
-`
+
 export const Detailsection = styled.section`
     color: #000;
     font-size: 1.6rem;

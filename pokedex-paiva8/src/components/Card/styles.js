@@ -12,6 +12,12 @@ text-align: center;
 display: flex;
 flex-direction: column;
 padding: 25px;
+img{
+    transition: transform .5s
+}
+:hover>img{
+    transform: scale(1.2);
+}
 
 .infoPoke {
     display: flex;
@@ -46,4 +52,12 @@ button {
 
 }
 }
+`
+export const PokeImg = styled.img`
+
+`
+
+export const TypeText = styled.div`
+    display: flex;
+    justify-content: space-between;
 `

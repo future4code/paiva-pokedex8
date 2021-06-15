@@ -6,7 +6,6 @@ import Pokedex from '../pages/Pokedex/Pokedex';
 import Error from '../pages/Error/Error';
 import Global from '../styles/Global';
 
-
 const Router = () => {
     return (
         <BrowserRouter>

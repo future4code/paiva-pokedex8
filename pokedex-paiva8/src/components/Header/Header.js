@@ -32,4 +32,8 @@ export const HeaderText = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    h1 {
+        margin-top: 5%;
+    }
 ` 

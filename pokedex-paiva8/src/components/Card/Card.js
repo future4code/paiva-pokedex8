@@ -11,14 +11,24 @@ function Card(props) {
 
 
     const addPokedex = (toPokedex) =>{
-        const addPokemon = [...pokedex, toPokedex]
-        
+        const addPokemon = [...pokedex, toPokedex]      
         const newPokeList = pokemon.filter(noPoke =>{
             return noPoke.id !== toPokedex.id
         })
         setPokedex(addPokemon)
         setPokemon(newPokeList)
         
+    }
+
+
+
+    const removePokedex = (noDex) =>{
+        const returnPoke = [...pokemon, noDex].sort((a,b) => a.id - b.id)
+        const removeDex = pokedex.filter(remove =>{
+            return remove.id !== noDex.id
+        })
+        setPokedex(removeDex)
+        setPokemon(returnPoke)
     }
     
 
@@ -38,7 +48,7 @@ function Card(props) {
 
             <div className="buttonArea">
                 <Button onClick={() => goToDetails(history, name)} variant="outlined" color="secondary">DETALHES</Button>
-                <Button onClick={()=> addPokedex(poke)} variant="contained" color="secondary">ADICIONAR</Button>
+                <Button onClick={props.dex ? ()=>removePokedex(poke) : ()=>addPokedex(poke)} variant="contained" color="secondary">{props.dex ? "Remover" : "Adicionar"}</Button>
             </div>
         </CardContainer>
     )

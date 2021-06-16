@@ -3,6 +3,7 @@ import axios from "axios";
 import PokemonContext from "./PokemonContext";
 
 export const Pokemons = (props) =>{
+    const [allPokemons, setAllPokemons] = useState([])
     const [pokeName, setPokeName] = useState([])
     const [pokemon, setPokemon] = useState([])
     const [pokedex, setPokedex] = useState([])
@@ -30,6 +31,7 @@ export const Pokemons = (props) =>{
                     .get(URL+poke.name)
                     .then((res) =>{
                         setPokemon((newPoke) => [...newPoke, res.data].sort((a,b) => a.id - b.id))
+                        setAllPokemons((newPoke) => [...newPoke, res.data].sort((a,b) => a.id - b.id))
                     })
                     .catch(err => {
                         console.log(err)
@@ -42,7 +44,9 @@ export const Pokemons = (props) =>{
         pokemon,
         setPokemon,
         pokedex,
-        setPokedex
+        setPokedex,
+        allPokemons,
+        setAllPokemons
     }
 
     return(

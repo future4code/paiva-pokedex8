@@ -16,7 +16,6 @@ import { DisplayHome } from './styled';
 
 const Home = () => {
     const { pokemon } = useContext(PokemonContext)
-    console.log(pokemon)
 
     const pokeCard = pokemon.map((poke) =>{
         const getType = poke.types.map((type) =>{

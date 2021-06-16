@@ -1,17 +1,17 @@
 # POKEDEX
 
 Nome dos integrantes: 
-- Adrian Américo
+- *Adrian Américo*
 - Guilherme Rodrigues
 - Eliza Oliveira
 
 Link do Surge: www.link.com.br
 
-##Considerações iniciais
+## Considerações iniciais
 
 ## O que funciona
 
 ## o que não funciona
 
-##Considerações Finais
+## Considerações Finais
 

@@ -23,6 +23,7 @@ const Home = () => {
                 name={poke.name}
                 image={poke.sprites.other["official-artwork"].front_default}
                 type={getType}
+                poke={poke}
             />
         )
     })

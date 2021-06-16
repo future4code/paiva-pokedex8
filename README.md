@@ -2,8 +2,8 @@
 
 Nome dos integrantes: 
 - Adrian Américo
-- Pessoa 2
-- Pessoa 3
+- Guilherme Rodrigues
+- Eliza 
 
 Link do Surge: www.link.com.br
 

@@ -9,7 +9,7 @@ import PokemonContext from "../../global/PokemonContext";
 import { DisplayHome } from "../Home/styled";
 
 const Pokedex = () =>{
-    const { pokedex } = useContext(PokemonContext)
+    const { pokedex, pokemon } = useContext(PokemonContext)
 
     const pokeCard = pokedex.map((poke) =>{
         const getType = poke.types.map((type) =>{
@@ -22,6 +22,7 @@ const Pokedex = () =>{
                 image={poke.sprites.other["official-artwork"].front_default}
                 type={getType}
                 poke={poke}
+                dex={true}
             />
         )
     })

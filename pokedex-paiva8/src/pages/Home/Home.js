@@ -4,14 +4,12 @@ import { AppContainer } from '../../components/AppContainer/AppContainer';
 import { HeaderText, HeaderMain } from '../../components/Header/Header';
 import { goToPokedex, goToDetails } from '../../routes/coordinator';
 import Button from '@material-ui/core/Button';
-import { useState } from 'react';
-import { useEffect } from 'react';
 import PokemonContext from '../../global/PokemonContext';
 import Card from './../../components/Card/Card'
 import { DisplayHome } from './styled';
 
 const Home = () => {
-    const { pokemon } = useContext(PokemonContext)
+    const { pokemon, pokedex } = useContext(PokemonContext)
 
     const pokeCard = pokemon.map((poke) =>{
         const getType = poke.types.map((type) =>{
@@ -24,6 +22,7 @@ const Home = () => {
                 image={poke.sprites.other["official-artwork"].front_default}
                 type={getType}
                 poke={poke}
+                dex={false}
             />
         )
     })

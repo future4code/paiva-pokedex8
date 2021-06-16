@@ -11,62 +11,66 @@ import PokemonContext from "../../global/PokemonContext";
 
 function DetailsPokemon() {
     const history = useHistory();
-    const { pokemon } = useContext(PokemonContext)
+    const { pokemon, allPokemons } = useContext(PokemonContext)
     const { id } = useParams()
 
-    const pokeFind = pokemon.find(PokeName => PokeName.name === id)
-
-    // const abilities1 = pokeFind.abilities[0].ability.name
-
-    
-    // for (let i = 0; i < pokeFind.lenght; i++) {
-    //     console.log(pokeFind.abilities[i])
-    // }
+    const pokeFind = allPokemons.find(PokeName => PokeName.name === id)
 
     return (
         <DetailContainer>
-            <Header>
-                <h1>PAGINA DE DETALHES</h1>
-            </Header>
             {pokeFind ? (
-            <Detailsection>
-                <div className="imagesArea">
-                    <img src="https://sg.portal-pokemon.com/play/resources/pokedex/img/pokemon_bg.png" alt="" className="spinnerImg" />
+                <DetailContainer>
+                    <Header>
+                        <h1>{(pokeFind.name.toUpperCase())}</h1>
+                    </Header>
+                    <Detailsection>
+                        <div className="imagesArea">
+                            <img src="https://sg.portal-pokemon.com/play/resources/pokedex/img/pokemon_bg.png" alt="" className="spinnerImg" />
 
-                    <img src={pokeFind.sprites.other["official-artwork"].front_default} alt="Luxray" className="pokemonImg" />
-                </div>
-                <InfoStatus className="statusInfo">
-                    <div>
-                        <p>Height</p>
-                        <span>{(pokeFind.height * 0.1).toFixed(2)} M</span>
-                        <p>Type</p>
-                        <div style={{ display: "flex", flexDirection: "column" }} >
-                            {pokeFind.types.map((res => {
-                                const { type } = res
-                                return <span key={Math.random()}>{type.name}</span>
-
-                            }))}
+                            <img src={pokeFind.sprites.other["official-artwork"].front_default} alt="Luxray" className="pokemonImg" />
                         </div>
+                        <InfoStatus className="statusInfo">
+                            <div>
+                                <p>Height</p>
+                                <span>{(pokeFind.height * 0.1).toFixed(2)} M</span>
+                                <p>Type</p>
+                                <div style={{ display: "flex", flexDirection: "column" }} >
+                                    {pokeFind.types.map((res => {
+                                        const { type } = res
+                                        return <span key={Math.random()}>{type.name}</span>
 
-                    </div>
-                    <div>
-                        <p>Weight</p>
-                        <span>{pokeFind.weight - 0.1} Kg</span>
-                        <div style={{ display: "flex", flexDirection: "column" }}>
-                            <p>Ability</p>
-                            {pokeFind.abilities.map((res => {
-                                const { ability } = res
-                                return <span key={ability.slot}>{ability.name}</span>
-                            }))}
+                                    }))}
+                                </div>
 
+                            </div>
+                            <div>
+                                <p>Weight</p>
+                                <span>{pokeFind.weight - 0.1} Kg</span>
+                                <div style={{ display: "flex", flexDirection: "column" }}>
+                                    <p>Ability</p>
+                                    {pokeFind.abilities.map((res => {
+                                        const { ability } = res
+                                        return <span key={ability.slot}>{ability.name}</span>
+                                    }))}
+
+                                </div>
+                            </div>
+                        </InfoStatus>
+                        <div className="buttonSection">
+                            <Button variant="outlined" color="secondary" onClick={() => goToLastPage(history)}>Voltar</Button>
                         </div>
-                    </div>
-                </InfoStatus>
+                    </Detailsection>
+                </DetailContainer>
+            ) : (
+            <DetailContainer>
+                <Header>
+                    <h1>Carregando...</h1>
+                </Header>
                 <div className="buttonSection">
                     <Button variant="outlined" color="secondary" onClick={() => goToLastPage(history)}>Voltar</Button>
                 </div>
-            </Detailsection>
-            ) : (<div><h1>Carregando</h1></div>)  }
+            </DetailContainer>
+            )  }
         </DetailContainer >
     )
 }

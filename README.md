@@ -3,7 +3,7 @@
 Nome dos integrantes: 
 - Adrian Américo
 - Guilherme Rodrigues
-- Eliza 
+- Eliza Oliveira
 
 Link do Surge: www.link.com.br
 

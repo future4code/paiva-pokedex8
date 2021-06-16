@@ -7,10 +7,11 @@ Nome dos integrantes:
 
 Link do Surge: www.link.com.br
 
-O que funciona:
-- Item 1
-- Item 2
+##Considerações iniciais
 
-O que não funciona: 
-- Item 3
-- Item 4
+## O que funciona
+
+## o que não funciona
+
+##Considerações Finais
+

@@ -16,24 +16,19 @@ function DetailsPokemon() {
 
     const pokeFind = pokemon.find(PokeName => PokeName.name === id)
 
-    const pokeType = pokeFind.types.map((type) => {
-        const types = type.type["name"]
-        return <span>{types}</span>
-    })
-    const type1 = pokeFind.types[0].type.name
-    const abilities1 = pokeFind.abilities[0].ability.name
+    // const abilities1 = pokeFind.abilities[0].ability.name
 
-    console.log(pokeFind.abilities)
-
-    for (let i = 0; i < pokeFind.lenght; i++) {
-        console.log(pokeFind.abilities[i])
-    }
+    
+    // for (let i = 0; i < pokeFind.lenght; i++) {
+    //     console.log(pokeFind.abilities[i])
+    // }
 
     return (
         <DetailContainer>
             <Header>
                 <h1>PAGINA DE DETALHES</h1>
             </Header>
+            {pokeFind ? (
             <Detailsection>
                 <div className="imagesArea">
                     <img src="https://sg.portal-pokemon.com/play/resources/pokedex/img/pokemon_bg.png" alt="" className="spinnerImg" />
@@ -48,7 +43,6 @@ function DetailsPokemon() {
                         <div style={{ display: "flex", flexDirection: "column" }} >
                             {pokeFind.types.map((res => {
                                 const { type } = res
-                                console.log(type.name)
                                 return <span key={Math.random()}>{type.name}</span>
 
                             }))}
@@ -72,6 +66,7 @@ function DetailsPokemon() {
                     <Button variant="outlined" color="secondary" onClick={() => goToLastPage(history)}>Voltar</Button>
                 </div>
             </Detailsection>
+            ) : (<div><h1>Carregando</h1></div>)  }
         </DetailContainer >
     )
 }

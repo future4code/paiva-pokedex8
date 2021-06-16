@@ -8,32 +8,32 @@ export const Pokemons = (props) =>{
     const [pokedex, setPokedex] = useState([])
     const URL = "https://pokeapi.co/api/v2/pokemon/"
 
-    useEffect(() => {
-        getPokemons()
-      },[])
+    // useEffect(() => {
+    //     getPokemons()
+    //   },[])
 
       
-    const getPokemons = () => {
-        axios.get(URL+"?limit=20&offset=0")
+    useEffect(() => {
+        axios.get(URL+"?limit=30&offset=0")
         .then(res =>{
             setPokeName(res.data.results);
         })
         .catch(err => {
             console.log(err);
         })
-    } 
+    },[]) 
 
     useEffect (() => {
-    if(pokeName.length){
-        pokeName.forEach((poke) =>{
-            axios
-                .get(URL+poke.name)
-                .then((res) =>{
-                    setPokemon((newPoke) => [...newPoke, res.data])
-                })
-                .catch(err => {
-                    console.log(err)
-                })
+        if(pokeName.length){
+            pokeName.forEach((poke) =>{
+                axios
+                    .get(URL+poke.name)
+                    .then((res) =>{
+                        setPokemon((newPoke) => [...newPoke, res.data].sort((a,b) => a.id - b.id))
+                    })
+                    .catch(err => {
+                        console.log(err)
+                    })
             })
         }
     }, [pokeName])

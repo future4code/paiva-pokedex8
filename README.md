@@ -15,3 +15,13 @@ Link do Surge: www.link.com.br
 
 ## Considerações Finais
 
+## Imagens
+
+**Home**
+
+**Pokedex**
+
+**Detalhes dos Pokemosn**
+
+**Página de Error**
+

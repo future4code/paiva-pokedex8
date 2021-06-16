@@ -1,7 +1,7 @@
 # POKEDEX
 
 Nome dos integrantes: 
-- Pessoa 1
+- Adrian Américo
 - Pessoa 2
 - Pessoa 3
 

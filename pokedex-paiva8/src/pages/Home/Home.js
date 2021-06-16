@@ -10,10 +10,6 @@ import PokemonContext from '../../global/PokemonContext';
 import Card from './../../components/Card/Card'
 import { DisplayHome } from './styled';
 
-
-
-
-
 const Home = () => {
     const { pokemon } = useContext(PokemonContext)
 
@@ -40,7 +36,6 @@ const Home = () => {
                 </HeaderText>
             </HeaderMain>
             <Button variant="outlined" color="secondary" onClick={() => goToPokedex(history)}>Pokedex</Button>
-            <Button variant="outlined" color="secondary" onClick={()=> goToDetails(history)} >Detalhes</Button>
             <DisplayHome>
                 {pokeCard}
             </DisplayHome>

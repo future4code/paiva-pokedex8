@@ -24,6 +24,7 @@ img{
     flex-direction: column;
     text-align: start;
     justify-content: start;
+    margin-top: 5%;
 
     span {
         font-size: 1.3rem;
@@ -31,6 +32,13 @@ img{
     h1 {
         font-weight: bold;
     }
+}
+
+.pokeType {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex: 1;
 }
 
 .pokemonLogo {
@@ -44,12 +52,8 @@ width: 80%;
     align-items: flex-end;
     justify-content: space-around;
 
-
-    
-
 button {
     height: 40px;
-
 }
 }
 `
@@ -59,5 +63,11 @@ export const PokeImg = styled.img`
 
 export const TypeText = styled.div`
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    color: white;
+    width: 60%;
+    flex: 1;
+    text-transform: uppercase;
 `

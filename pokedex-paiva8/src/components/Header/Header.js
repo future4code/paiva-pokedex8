@@ -4,7 +4,7 @@ import HeaderImg from '../../assets/pokedex_bg.png'
 
 export const Header = styled.header`
 color: black;
-height: 17%;
+/* height: 17%; */
 align-items: center;
 display: flex;
 justify-content: center;

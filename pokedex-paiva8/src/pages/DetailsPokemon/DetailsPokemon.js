@@ -28,12 +28,15 @@ function DetailsPokemon() {
             {pokeFind ? (
                 <>
                     <Detailsection>
-                        {/* <div className="infoPokeAlign"> */}
-                            <div className="imagesArea">
-                                <img src="https://sg.portal-pokemon.com/play/resources/pokedex/img/pokemon_bg.png" alt="" className="spinnerImg" />
 
-                                <img src={pokeFind.sprites.other["official-artwork"].front_default} alt="Luxray" className="pokemonImg" />
-                                <InfoStatus className="statusInfo">
+
+                        <div className="imagesArea">
+                        <img src="https://sg.portal-pokemon.com/play/resources/pokedex/img/pokemon_circle_bg.png" alt="BlurImage"  className="blurImage"/>
+
+                            <img src="https://sg.portal-pokemon.com/play/resources/pokedex/img/pokemon_bg.png" alt="" className="spinnerImg" />
+            
+                            <img src={pokeFind.sprites.other["official-artwork"].front_default} alt="Luxray" className="pokemonImg" />
+                            <InfoStatus className="statusInfo">
                                 <div>
                                     <p>Height</p>
                                     <span>{(pokeFind.height * 0.1).toFixed(2)} M</span>
@@ -58,12 +61,8 @@ function DetailsPokemon() {
                                     </div>
                                 </div>
                             </InfoStatus>
-                            </div>
-                            
-                          
-                        {/* </div> */}
+                        </div>
                     </Detailsection>
-                    <StatusPokemon />
                 </>
             ) : (
                 <>
@@ -72,6 +71,8 @@ function DetailsPokemon() {
                     </Header>
                 </>
             )}
+
+            <StatusPokemon />
             <div className="buttonSection">
                 <Button variant="outlined" color="secondary" onClick={() => goToLastPage(history)}>Voltar</Button>
             </div>

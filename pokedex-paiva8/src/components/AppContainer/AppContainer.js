@@ -16,15 +16,10 @@ export const AppContainer = styled.div`
 
 export const DetailContainer = styled.div`
     background-image: url(${Background});
-    height: 2000px;
     background-position: top;
     position: relative;
     background-repeat: no-repeat, repeat;
-    background-size: 100% 100%;
+    background-size: 100% auto;
     background-color: #0a141e;
     color: white;
-
-    h1 {
-        text-align: center;
-    }
 `

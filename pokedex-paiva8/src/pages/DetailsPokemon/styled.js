@@ -6,8 +6,8 @@ export const Detailsection = styled.section`
     font-size: 1.6rem;
     line-height: 1.6;
     max-width: 1400px;
-    width: 100%;
-    align-items: flex-end;
+    /* width: 100%; */
+    align-items: center;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -16,8 +16,13 @@ export const Detailsection = styled.section`
     
 
 img {
-    width: 40vw;
+    width: 30vw;
 }
+
+.blurImage{
+      position: absolute;
+      z-index: 1;
+  }
 
 .imagesArea {
 display: flex;
@@ -27,6 +32,8 @@ justify-content: center;
 
 .spinnerImg {
     position: absolute;
+    z-index: 0;
+    width: 40vw;
     animation: rotate-anime 3s linear infinite;
     animation-name: spin;
       animation-duration: 3000ms;
@@ -48,7 +55,8 @@ justify-content: center;
   }
   .pokemonImg {
       position: relative;
-      width: 30vw;
+      width: 25vw;
+      z-index: 1000;
   }
 
   .buttonSection{
@@ -73,14 +81,29 @@ export const InfoStatus = styled.div`
 
       p {
           color: #b3eafe;
+          font-size: 2.1vw;
+  }
+  span {
+      font-size: 1.8vw;
   }
 `
 
 export const StatusContainer = styled.div`
+height: 100vh;
+position: relative;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+`
+
+export const StatusInfoPoke = styled.div`
+flex: 1;
+`
+
+export const AttacksInfoPoke = styled.div`
 background-image: url(${StatusBackground});
 background-size: 100% auto;
 background-repeat: no-repeat;
-height: 100vh;
-position: relative;
-top: 15%;
+flex: 1;
+
 `

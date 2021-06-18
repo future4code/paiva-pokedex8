@@ -2,12 +2,12 @@ import React, { useContext } from "react";
 import { useHistory } from "react-router";
 import { goToLastPage } from "../../routes/coordinator";
 import Button from '@material-ui/core/Button';
-import { Detailsection, InfoStatus } from './styled';
+import { Detailsection, InfoStatus, DetailContainer } from './styled';
 import { Header } from '../../components/Header/Header'
-import { DetailContainer } from "../../components/AppContainer/AppContainer";
 import { useParams } from "react-router-dom";
 import PokemonContext from "../../global/PokemonContext";
-import StatusPokemon from './StatusPokemon'
+import StatusPokemon from './StatusPokemon';
+import { PokemonCircle, PokemonBackground } from '../../constants';
 
 
 function DetailsPokemon() {
@@ -19,21 +19,41 @@ function DetailsPokemon() {
 
     return (
         <DetailContainer>
-            {pokeFind &&
-                <Header>
-                    <h1>{(pokeFind.name.toUpperCase())}</h1>
-                </Header>
-            }
-
             {pokeFind ? (
                 <>
                     <Detailsection>
-                        {/* <div className="infoPokeAlign"> */}
-                            <div className="imagesArea">
-                                <img src="https://sg.portal-pokemon.com/play/resources/pokedex/img/pokemon_bg.png" alt="" className="spinnerImg" />
+                        <header>
+                            <span>Pokédex</span>
+                        </header>
 
-                                <img src={pokeFind.sprites.other["official-artwork"].front_default} alt="Luxray" className="pokemonImg" />
-                                <InfoStatus className="statusInfo">
+                        <div className="pokemon-detail_slider">
+                            <div className="pokemon-slider__left">
+                                <img src="https://sg.portal-pokemon.com/play/resources/pokedex/img/arrow_left_btn.png" alt="Left Arrow" />
+                                <span>Voltar</span>
+                            </div>
+
+                            <div className="pokemon-detail_center">
+                                <p>001</p>
+                                <p>Pokemon Name</p>
+                            </div>
+
+                            <div className="pokemon-detail_right">
+                                <img src="https://sg.portal-pokemon.com/play/resources/pokedex/img/arrow_right_btn.png" alt="" />
+                                <span>Adicionar</span>
+
+
+
+                            </div>
+                        </div>
+
+                        {/* <div> <h1>{(pokeFind.name.toUpperCase())}</h1></div> */}
+                        <div className="imagesArea">
+                            <img src={PokemonCircle} alt="BlurImage" className="blurImage" />
+
+                            <img src={PokemonBackground} alt="Background" className="spinnerImg" />
+                            z
+                            <img src={pokeFind.sprites.other["official-artwork"].front_default} alt="Pokemon" className="pokemonImg" />
+                            <InfoStatus className="statusInfo">
                                 <div>
                                     <p>Height</p>
                                     <span>{(pokeFind.height * 0.1).toFixed(2)} M</span>
@@ -54,16 +74,23 @@ function DetailsPokemon() {
                                             const { ability } = res
                                             return <span key={ability.slot}>{ability.name}</span>
                                         }))}
-
                                     </div>
                                 </div>
                             </InfoStatus>
+                        </div>
+                        <div className="statusArea">
+                            <div className="statusArea-leftSide">
+                                <img src="" alt="" />
                             </div>
-                            
-                          
-                        {/* </div> */}
+
+                            <div className="statusArea-rightSide">
+                                {/* <h3>Status</h3> */}
+                                <div>
+
+                                </div>
+                            </div>
+                        </div>
                     </Detailsection>
-                    <StatusPokemon />
                 </>
             ) : (
                 <>
@@ -72,6 +99,8 @@ function DetailsPokemon() {
                     </Header>
                 </>
             )}
+
+            {/* <StatusPokemon /> */}
             <div className="buttonSection">
                 <Button variant="outlined" color="secondary" onClick={() => goToLastPage(history)}>Voltar</Button>
             </div>

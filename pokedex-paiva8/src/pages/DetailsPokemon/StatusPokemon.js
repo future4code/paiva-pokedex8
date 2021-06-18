@@ -1,10 +1,22 @@
 import React from 'react';
-import { StatusContainer } from './styled';
+import { StatusContainer, StatusInfoPoke, AttacksInfoPoke } from './styled';
 
 function StatusPokemon() {
     return (
         <StatusContainer>
-            <h1>Hello World</h1>
+            <StatusInfoPoke>
+                <div>
+                    <p>Foto Costas</p>
+                </div>
+
+                <div>
+                    <p>Status</p>
+                </div>
+            </StatusInfoPoke>
+
+            <AttacksInfoPoke>
+
+            </AttacksInfoPoke>
         </StatusContainer>
     )
 }

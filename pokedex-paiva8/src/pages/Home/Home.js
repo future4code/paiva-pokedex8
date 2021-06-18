@@ -6,14 +6,30 @@ import { goToPokedex, goToDetails } from '../../routes/coordinator';
 import Button from '@material-ui/core/Button';
 import PokemonContext from '../../global/PokemonContext';
 import Card from './../../components/Card/Card'
-import { DisplayHome } from './styled';
+import { DisplayHome, HomeDisplay, NavPages} from './styled';
+import { Pagination } from '@material-ui/lab'
+import { makeStyles } from '@material-ui/core';
+import { colorType, TypeSpan } from '../../components/Card/styles';
+
 
 const Home = () => {
-    const { pokemon, pokedex } = useContext(PokemonContext)
+    const { pokemon, pokedex, pagination, setPagination } = useContext(PokemonContext)
+
+    const handleChange = (event, value) => {
+        setPagination(value);
+    };
+
+    const onPokedex = (poke) => {
+        const index = pokedex.findIndex((item) => {
+            return item.name === poke.name
+         })
+         return index > -1
+     }
 
     const pokeCard = pokemon.map((poke) =>{
+        const onDex = onPokedex(poke)
         const getType = poke.types.map((type) =>{
-            return <span>{type.type.name}</span>
+            return <TypeSpan color={colorType[type.type.name]}>{type.type.name}</TypeSpan>
         })
 
         return (
@@ -22,24 +38,41 @@ const Home = () => {
                 image={poke.sprites.other["official-artwork"].front_default}
                 type={getType}
                 poke={poke}
-                dex={false}
+                isOnPokedex={onDex}
+                viewFromHome={true}
             />
         )
     })
 
+    const useStyles = makeStyles(() => ({
+        ul: {
+          "& .MuiPaginationItem-root": {
+            color: "#fff"
+          }
+        }
+      }));
+
+    const classes = useStyles()
+
+    
     const history = useHistory()
     return (
-        <AppContainer>
-            <HeaderMain>
-                <HeaderText>
-                    <h1>POKELIST</h1>
-                </HeaderText>
-            </HeaderMain>
-            <Button variant="outlined" color="secondary" onClick={() => goToPokedex(history)}>Pokedex</Button>
-            <DisplayHome>
-                {pokeCard}
-            </DisplayHome>
-        </AppContainer> 
+        <HomeDisplay>
+            <AppContainer>
+                <HeaderMain>
+                <Button className="HeaderButton" variant="contained" color="secondary" onClick={() => goToPokedex(history)}>Pokedex</Button>
+                    <HeaderText>
+                        <h1>POKELIST</h1>
+                    </HeaderText>
+                </HeaderMain>
+                <DisplayHome>
+                    {pokeCard}
+                </DisplayHome>
+            </AppContainer> 
+            <NavPages>
+                <Pagination classes={{ul: classes.ul}} color="secondary" count={56} page={pagination} onChange={handleChange} />
+            </NavPages>
+        </HomeDisplay>
     )
     ;
 };

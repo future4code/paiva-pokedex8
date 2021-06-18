@@ -70,4 +70,32 @@ export const TypeText = styled.div`
     width: 60%;
     flex: 1;
     text-transform: uppercase;
+    background-color: ${props => props.color};
+ 
+`
+export const colorType = {
+    grass: "#96c44e",
+    flying: "#b2babd",
+    water: "#32bad9;",
+    poison: "#b97fc9",
+    fire: "#fd7d24",
+    bug: "#729f3f",
+    normal: "gray",
+    ground: "#E7BD6B",
+    fairy:"#E397D1",
+    electric:"#E5C531",
+    fighting: "#CB5F48",
+    psychic:"#E5709B",
+    rock:"#B2A061",
+    ghost:"#846AB6",
+    dragon:"#6A7BAF",
+    dark: "#736C75 ",
+    steel:"#89A1B0",
+    ice: "#70CBD4 ",
+  };
+
+  export const TypeSpan = styled.span`
+    background-color: ${props => props.color};
+    padding: 8px;
+    border-radius: 20px;
 `

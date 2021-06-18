@@ -12,10 +12,10 @@ import StatusPokemon from './StatusPokemon'
 
 function DetailsPokemon() {
     const history = useHistory();
-    const { pokemon, allPokemons } = useContext(PokemonContext)
+    const { pokemon, pokedex } = useContext(PokemonContext)
     const { id } = useParams()
 
-    const pokeFind = allPokemons.find(PokeName => PokeName.name === id)
+    const pokeFind = (pokemon.find(PokeName => PokeName.name === id) || (pokedex.find(PokeName => PokeName.name === id)))
 
     return (
         <DetailContainer>

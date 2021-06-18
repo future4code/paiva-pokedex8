@@ -3,12 +3,13 @@ import Background from '../../assets/main_bg.jpg';
 import Background2 from '../../assets/list_bg.jpg';
 
 export const AppContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: white;
     background-image: url(${Background2});
     background-position: center;
     background-color: #0a141e;
-    color: white;
-    overflow: auto;
-
     h1 {
         text-align: center;
     }

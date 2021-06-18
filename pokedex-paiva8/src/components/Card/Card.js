@@ -1,36 +1,29 @@
 import React, { useContext, useEffect } from 'react';
 import { CardContainer, PokeImg, TypeText } from './styles';
 import Button from '@material-ui/core/Button';
-import { goToDetails } from '../../routes/coordinator';
+import { goToDetails, goToPokedex } from '../../routes/coordinator';
 import { useHistory, useParams } from "react-router-dom";
 import PokemonContext from '../../global/PokemonContext';
 
 function Card(props) {
     const { name, type, image, poke } = props
-    const { pokedex, setPokedex, pokemon, setPokemon} = useContext(PokemonContext)
+    const { pokedex, setPokedex} = useContext(PokemonContext)
 
 
     const addPokedex = (toPokedex) =>{
         const addPokemon = [...pokedex, toPokedex]      
-        const newPokeList = pokemon.filter(noPoke =>{
-            return noPoke.id !== toPokedex.id
-        })
         setPokedex(addPokemon)
-        setPokemon(newPokeList)
-        
+       
     }
 
-
-
     const removePokedex = (noDex) =>{
-        const returnPoke = [...pokemon, noDex].sort((a,b) => a.id - b.id)
         const removeDex = pokedex.filter(remove =>{
             return remove.id !== noDex.id
         })
         setPokedex(removeDex)
-        setPokemon(returnPoke)
     }
-    
+      
+
 
     const history = useHistory()
     return (
@@ -48,7 +41,7 @@ function Card(props) {
 
             <div className="buttonArea">
                 <Button onClick={() => goToDetails(history, name)} variant="outlined" color="secondary">DETALHES</Button>
-                <Button onClick={props.dex ? ()=>removePokedex(poke) : ()=>addPokedex(poke)} variant="contained" color="secondary">{props.dex ? "Remover" : "Adicionar"}</Button>
+                <Button onClick={ props.isOnPokedex ? (props.viewFromHome ? ()=>goToPokedex(history) : ()=>removePokedex(poke)) : (()=>addPokedex(poke)) }variant="contained" color="secondary">{props.isOnPokedex ? (props.viewFromHome ? ("Ver na Pokedex") : ("Remover")) :("Adicionar") }</Button>
             </div>
         </CardContainer>
     )

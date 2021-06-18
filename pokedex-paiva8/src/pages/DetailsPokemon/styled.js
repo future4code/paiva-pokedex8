@@ -1,10 +1,5 @@
 import styled from "styled-components";
-
-// import Background from '../../assets/main_bg.jpg'
-
-
-
-
+import StatusBackground from '../../assets/style1_bg.png';
 
 export const Detailsection = styled.section`
     color: #000;
@@ -12,20 +7,22 @@ export const Detailsection = styled.section`
     line-height: 1.6;
     max-width: 1400px;
     width: 100%;
-    align-items: center;
+    align-items: flex-end;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    height: 100%;
     position: relative;
+    height: 100vh;
+    
 
 img {
-    width: 35vw;
+    width: 40vw;
 }
 
 .imagesArea {
 display: flex;
 align-items: center;
+justify-content: center;
 }
 
 .spinnerImg {
@@ -51,9 +48,8 @@ align-items: center;
   }
   .pokemonImg {
       position: relative;
+      width: 30vw;
   }
-
-
 
   .buttonSection{
 display: flex;
@@ -71,11 +67,20 @@ export const InfoStatus = styled.div`
       color: white;
       right: 8%;
       text-align: center;
-      width: 300px;
+      width: 20%;
       display: flex;
       justify-content: space-between;
 
       p {
           color: #b3eafe;
   }
+`
+
+export const StatusContainer = styled.div`
+background-image: url(${StatusBackground});
+background-size: 100% auto;
+background-repeat: no-repeat;
+height: 100vh;
+position: relative;
+top: 15%;
 `

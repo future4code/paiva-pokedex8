@@ -5,7 +5,7 @@ Nome dos integrantes:
 - **Guilherme Rodrigues**
 - **Eliza Oliveira**
 
-Link do Surge: https://lazy-servant.surge.sh/pokedex
+Link do Surge: https://lazy-servant.surge.sh/
 
 ## Considerações iniciais
 

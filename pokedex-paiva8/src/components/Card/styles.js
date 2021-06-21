@@ -18,6 +18,19 @@ img{
 :hover>img{
     transform: scale(1.2);
 }
+:hover h1{
+    transition: text-shadow .5s;
+    text-shadow:
+            0 0 7px #fff,
+            0 0 10px #fff,
+            0 0 25px #fff,
+            0 0 40px #00fff7,
+            0 0 55px #00fff7,
+            0 0 70px #00fff7,
+            0 0 80px #00fff7,
+            0 0 120px #00fff7;
+    }
+
 
 .infoPoke {
     display: flex;
@@ -58,7 +71,9 @@ button {
 }
 `
 export const PokeImg = styled.img`
-
+:hover{
+    cursor: pointer;
+}
 `
 
 export const TypeText = styled.div`
@@ -80,7 +95,7 @@ export const colorType = {
     poison: "#b97fc9",
     fire: "#fd7d24",
     bug: "#729f3f",
-    normal: "gray",
+    normal: "#808080",
     ground: "#E7BD6B",
     fairy:"#E397D1",
     electric:"#E5C531",
@@ -98,4 +113,5 @@ export const colorType = {
     background-color: ${props => props.color};
     padding: 8px;
     border-radius: 20px;
+    color: white;
 `

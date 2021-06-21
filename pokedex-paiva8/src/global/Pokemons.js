@@ -21,7 +21,7 @@ export const Pokemons = (props) =>{
             setPokeName(res.data.results);
         })
         .catch(err => {
-            alert(err.responde.message);
+            console.log(err);
         })
     }
 
@@ -41,7 +41,7 @@ export const Pokemons = (props) =>{
                     }
                 })
                 .catch(err => {
-                    alert(err.responde.message);
+                    console.log(err)
                 })
         })
         

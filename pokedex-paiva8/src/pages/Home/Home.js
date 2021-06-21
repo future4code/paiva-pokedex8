@@ -12,6 +12,8 @@ import { makeStyles } from '@material-ui/core';
 import { colorType, TypeSpan } from '../../components/Card/styles';
 
 
+
+
 const Home = () => {
     const { pokemon, pokedex, pagination, setPagination } = useContext(PokemonContext)
 

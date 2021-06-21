@@ -13,7 +13,3 @@ export const AppContainer = styled.div`
         text-align: center;
     }
 `
-
-export const DetailContainer = styled.div`
-
-`

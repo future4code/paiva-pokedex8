@@ -40,7 +40,7 @@ const Pokedex = () =>{
                     </HeaderText>
                 </HeaderMain>
                 <DisplayHome>
-                    {pokeCard}
+                    {pokeCard.length === 0 ? (<div><h1>Sua Pokedex está vazia</h1></div>) : pokeCard}
                 </DisplayHome>
             </AppContainer> 
         </PokedexDisplay>

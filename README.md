@@ -17,4 +17,5 @@ Link do Surge: https://lazy-servant.surge.sh/
 ![Captura de tela de 2021-06-21 08-42-07](https://user-images.githubusercontent.com/73081422/122756683-1cb7ae00-d26d-11eb-9ec6-72599c3edec0.png)
 
 **Detalhes dos Pokemon**
+![Captura de tela de 2021-06-21 08-41-29](https://user-images.githubusercontent.com/73081422/122757240-c7c86780-d26d-11eb-9c89-9c8a281ba746.png)
 ![Captura de tela de 2021-06-21 08-41-37](https://user-images.githubusercontent.com/73081422/122756622-0873b100-d26d-11eb-81ed-7b45a5c130d4.png)
